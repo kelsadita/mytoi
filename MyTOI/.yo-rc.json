@@ -1,0 +1,33 @@
+{
+  "generator-rf": {
+    "appname": "MyTOI",
+    "mkTestDirs": true,
+    "description": "A React/Flux app generate by RF, powered with Babel",
+    "dialect": "Babel",
+    "scriptSuffix": ".js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "dialectModuleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "stylesheet": "CSS",
+    "stylesheetSuffix": ".css",
+    "devDependencies": {
+      "css-loader": "*",
+      "file-loader": "*",
+      "jest-cli": "*",
+      "react-hot-loader": "*",
+      "react-tools": "*",
+      "style-loader": "*",
+      "webpack-dev-server": "*",
+      "webpack": "*",
+      "babel-loader": "*",
+      "babel-jest": "*"
+    },
+    "dialectTest": ".jsx?",
+    "dialectLoader": "react-hot!babel",
+    "stylesheetLoader": "style!css"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "MyTOI",
+  "version": "0.0.0",
+  "description": "A React/Flux app generate by RF, powered with Babel",
+  "main": "build/bundle.js",
+  "dependencies": {
+    "flux": "^2.0.1",
+    "jquery": "^2.1.3",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
+    "react-router-component": "^0.23.2"
+  },
+  "devDependencies": {
+    "css-loader": "*",
+    "file-loader": "*",
+    "jest-cli": "*",
+    "react-hot-loader": "*",
+    "react-tools": "*",
+    "style-loader": "*",
+    "webpack-dev-server": "*",
+    "webpack": "*",
+    "babel-loader": "*",
+    "babel-jest": "*"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --colors --content-base ./build",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "MIT",
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "globals": {
+      "SCRIPTS": "<rootDir>/src/scripts"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/node_modules/"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  }
+}
