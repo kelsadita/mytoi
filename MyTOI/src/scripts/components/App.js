@@ -1,52 +1,36 @@
 import React from 'react';
 
+import Router from 'react-router-component';
+
 import Header from '../components/templates/header'
 import Footer from '../components/templates/footer'
+
 import NewsList from '../components/news/NewsList'
+import NewsComponent from '../components/news/NewsComponent';
 
-import BreakingNewsStore from '../stores/BreakingNewsStore';
-
-import NewsService from '../utils/NewsService';
-
-function getStateFromStores() {
-  return {
-    news: BreakingNewsStore.getAll()
-  }
-}
-
-// Initially fetching all the breaking news
-NewsService.getBreakingNewsList();
+// Setting up the router
+let Locations = Router.Locations
+let Location = Router.Location
 
 const App = React.createClass({
-
-  getInitialState () {
-    return getStateFromStores();
-  },
-
-  componentDidMount () {
-    BreakingNewsStore.addChangeListener(this._onChange);
-  },
-
-  fetchBreakingNews () {
-    NewsService.getBreakingNewsList();
-  },
 
   render () {
     return (
       <div>
         <Header />
         <article className="context">
-          <button className="btn btn-success pull-right" onClick={this.fetchBreakingNews}>Fetch News</button>
-          <NewsList newsItems = {this.state.news}/>
+
+          <Locations path={this.props.path} hash>
+            <Location path = "/" handler = {NewsList} />
+            <Location path = "/news/:newsid" handler = {NewsComponent} />
+          </Locations>
+          
         </article>
         <Footer />
       </div>
     );
   },
 
-  _onChange () {
-    this.setState(getStateFromStores());
-  }
 });
 
 export default App;

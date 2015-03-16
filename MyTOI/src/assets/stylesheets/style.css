@@ -1,4 +1,40 @@
 article.context {
-  font-size: 16px;
-  margin-top: 35px;
+  font-size  : 16px;
+  margin-top : 35px;
 }
+
+.news-details-body {
+  font-family : "Proxima Nova";
+  text-align  : justify;
+}
+
+.news-details-heading {
+  font-family: "Vollkorn";
+}
+
+.news-details-image {
+  width  : 300px;
+  margin : 0 auto;
+}
+
+.news-details-back {
+  vertical-align: middle;
+}
+
+.thumbnail.with-caption {
+  background: #f5f5f5;
+}
+.thumbnail.with-caption p {
+  margin: 0;
+  padding-top: 0.5em;
+}
+.thumbnail.with-caption small:before {
+  content: '\2014 \00A0';
+}
+.thumbnail.with-caption small {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+  color: #999;
+}
+

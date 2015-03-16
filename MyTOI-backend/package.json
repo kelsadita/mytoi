@@ -12,6 +12,9 @@
     "express": "~4.12.2",
     "hbs": "~2.9.0",
     "morgan": "~1.5.1",
+    "react": "^0.12.2",
+    "react-async": "^2.0.1",
+    "react-router-component": "^0.24.2",
     "request": "^2.53.0",
     "serve-favicon": "~2.2.0"
   }

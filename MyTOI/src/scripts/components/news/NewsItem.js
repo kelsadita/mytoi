@@ -1,5 +1,8 @@
 import React from 'react'
 
+import Router from 'react-router-component'
+let Link = Router.Link
+
 const NewsItem = React.createClass({
 
   renderKeywords (keywordsText) {
@@ -19,11 +22,12 @@ const NewsItem = React.createClass({
 
   render () {
 
-    var newsData = this.props.newsItem;
+    var newsData              = this.props.newsItem;
+    var newsItemComponentLink = "/news/" + newsData.NewsItemId;
 
     return (
       <div>
-        <h4>{newsData.HeadLine}</h4>
+        <h4><Link href={newsItemComponentLink}>{newsData.HeadLine}</Link></h4>
         <div>{newsData.Caption}</div>
         <div><b>Keywords: </b>{this.renderKeywords(newsData.Keywords)}</div>
         <hr/>

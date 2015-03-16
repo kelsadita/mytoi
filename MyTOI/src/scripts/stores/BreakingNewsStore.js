@@ -17,7 +17,7 @@ const BreakingNewsStore = merge(EventEmitter.prototype, {
 
   getAll () {
     return breaking_news;
-  }
+  },
 
 });
 

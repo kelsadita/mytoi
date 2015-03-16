@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var newsService = require('../services/NewsService');
-var allowCORS = require('../services/AllowCORS').allowCORS;
 
 /* GET news listing. */
-router.get('/:newsCategory', newsService.fetchNews, allowCORS);
+router.get('/newsfeed/:newsCategory', newsService.fetchNews);
+router.get('/news/:newsid', newsService.fetchNewsItem);
 
 module.exports = router;
