@@ -28,6 +28,19 @@ const NewsService = {
         console.log(data);
       }
     });
+  },
+
+  getNewsComments (newsId) {
+    $.ajax({
+      url: 'http://localhost:3000/api/news/' + newsId + '/comments',
+      success: function (newsCommentsDetails) {
+        NewsDetailsActions.retrieveNewsComments(newsCommentsDetails.Item);
+      },
+      error: function (data) {
+        // TODO Add error handler action
+        console.log(data);
+      }
+    });
   }
 }
 

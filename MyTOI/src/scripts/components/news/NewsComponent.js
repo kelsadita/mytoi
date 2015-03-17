@@ -64,10 +64,12 @@ const NewsComponent = React.createClass({
           <p>{newsDetails.Caption}</p>
         </blockquote>
 
+        <div className="news-details-body" dangerouslySetInnerHTML={{__html: this.getFormattedStory(newsDetails.Story)}}></div>
 
-        <div className="news-details-body" dangerouslySetInnerHTML={{__html: this.getFormattedStory
-          (newsDetails.Story)}}>
-        </div>
+        <hr/>
+
+        <button className="btn btn-success">Comments</button>
+
         <hr/>
       </div>
     );

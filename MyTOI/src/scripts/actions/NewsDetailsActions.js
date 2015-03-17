@@ -7,7 +7,16 @@ const NewsDetailsActions = {
       type        : 'RETRIEVE_NEWS_DETAILS',
       newsDetails : newsDetails
     });
+  },
+
+  retrieveNewsComments (newsCommentsDetails) {
+    AppDispatcher.handleServerAction({
+      type                : 'RETRIEVE_NEWS_COMMENTS',
+      newsCommentsDetails : newsCommentsDetails
+    });
   }
+
+
 
 }
 
