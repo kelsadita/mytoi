@@ -21,6 +21,12 @@ article.context {
   vertical-align: middle;
 }
 
+.news-comment-box {
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
 .thumbnail.with-caption {
   background: #f5f5f5;
 }

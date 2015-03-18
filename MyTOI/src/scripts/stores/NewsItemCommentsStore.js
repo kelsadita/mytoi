@@ -26,7 +26,7 @@ NewsItemCommentsStore.dispatchToken = AppDispatcher.register((payload) => {
 
   switch(action.type) {
     case 'RETRIEVE_NEWS_COMMENTS': 
-      news_comments = action.newsCommentsList;
+      news_comments = action.newsCommentsDetails;
       NewsItemCommentsStore.emitChange();
       break;
 

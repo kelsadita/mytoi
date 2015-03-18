@@ -9,7 +9,7 @@ let Link = Router.Link
 
 function getStateFromStores() {
   return {
-    newsDetails: NewsItemCommentsStore.getAllComments()
+    newsCommentsDetails: NewsItemCommentsStore.getAllComments()
   }
 }
 
@@ -17,7 +17,7 @@ const NewsCommentsComponent = React.createClass({
 
   getInitialState () {
     return {
-      newsDetails: [] 
+      newsCommentsDetails: []
     };
   },
 
@@ -34,8 +34,31 @@ const NewsCommentsComponent = React.createClass({
     return story;
   },
 
-  render () {
 
+  renderComment (newsComment) {
+    let userImage = newsComment.UserImage || 'http://mytimes.indiatimes.com/image/thumb/0/default';
+    return (
+      <div className="col-lg-12 news-comment-box">
+        <div className="col-lg-1">
+          <img src={userImage} alt="user image" className="img-circle"/>
+        </div>
+        <div className="col-lg-11">
+          <h5>{newsComment.Fromname}</h5>
+          {newsComment.Comment}
+        </div>
+        <br/>
+      </div>  
+    )
+  },
+
+  render () {
+    var newsCommentsDetails = this.state.newsCommentsDetails;
+    return (
+      <div>
+        <hr/>
+        {newsCommentsDetails.map((newsComment) => this.renderComment(newsComment))}
+      </div>
+    )
   },
 
   _onChange () {

@@ -4,6 +4,8 @@ import Router from 'react-router-component'
 import NewsItemStore from '../../stores/NewsItemStore'
 import NewsService from '../../utils/NewsService'
 
+import NewsCommentsComponent from '../../components/news/NewsCommentsComponent'
+
 // Importing router link
 let Link = Router.Link
 
@@ -23,7 +25,9 @@ const NewsComponent = React.createClass({
           Photo: '',
           PhotoCaption: ''
         }
-      }
+      },
+
+      showComments: false
     };
   },
 
@@ -38,6 +42,10 @@ const NewsComponent = React.createClass({
     story = story.replace(/(<strong>READ ALSO)/g, '<br/><br/>$1')
 
     return story;
+  },
+
+  toggleComments () {
+    this.setState({showComments: !this.state.showComments});
   },
 
   render () {
@@ -68,7 +76,9 @@ const NewsComponent = React.createClass({
 
         <hr/>
 
-        <button className="btn btn-success">Comments</button>
+        <button className="btn btn-success" onClick={this.toggleComments}>Comments</button>
+  
+        { this.state.showComments ? <NewsCommentsComponent newsid={newsDetails.NewsItemId}/> : null }
 
         <hr/>
       </div>

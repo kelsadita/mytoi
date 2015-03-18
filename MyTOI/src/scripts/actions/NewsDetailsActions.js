@@ -16,8 +16,6 @@ const NewsDetailsActions = {
     });
   }
 
-
-
 }
 
 export default NewsDetailsActions
