@@ -4,6 +4,7 @@ import Router from 'react-router-component'
 import NewsItemStore from '../../stores/NewsItemStore'
 import NewsService from '../../utils/NewsService'
 
+import NewsPhotoComponent from '../../components/news/NewsPhotoComponent'
 import NewsCommentsComponent from '../../components/news/NewsCommentsComponent'
 
 // Importing router link
@@ -37,10 +38,8 @@ const NewsComponent = React.createClass({
   },
 
   getFormattedStory (story) {
-
     // Prepend break before read also
     story = story.replace(/(<strong>READ ALSO)/g, '<br/><br/>$1')
-
     return story;
   },
 
@@ -48,38 +47,39 @@ const NewsComponent = React.createClass({
     this.setState({showComments: !this.state.showComments});
   },
 
+  newsHeading (headLine) {
+    var newsComponentBackLink = "/" + this.props.newsCategory;
+    return (
+      <h2 className="news-details-heading">
+        <Link href={newsComponentBackLink}>
+          <span className="glyphicon glyphicon-chevron-left news-details-back" aria-hidden="true"></span>
+        </Link>
+        &nbsp;{headLine}
+      </h2>
+    )
+  },
+
+  newsQuote (caption) {
+    return (
+        <blockquote>
+          <p>{caption}</p>
+        </blockquote>
+    );
+  },
+
   render () {
     var newsDetails = this.state.newsDetails;
-    var newsImageLink = newsDetails.Image.Photo;
-    var newsImageCaption = newsDetails.Image.PhotoCaption;
+
     return (
       <div>
-        <h2 className="news-details-heading">
-          <Link href="/">
-            <span className="glyphicon glyphicon-chevron-left news-details-back" aria-hidden="true"></span>
-          </Link>
-          &nbsp;{newsDetails.HeadLine}
-        </h2>
-        
+        {this.newsHeading(newsDetails.HeadLine)}
         <hr/>
-        
-        <div className="news-details-image thumbnail with-caption">
-          <img src={newsImageLink} className="img-thumbnail"/>
-          <p>{newsImageCaption}</p>
-        </div>
-
-        <blockquote>
-          <p>{newsDetails.Caption}</p>
-        </blockquote>
-
+        <NewsPhotoComponent photoData={newsDetails.Image}/>
+        {this.newsQuote(newsDetails.Caption)}
         <div className="news-details-body" dangerouslySetInnerHTML={{__html: this.getFormattedStory(newsDetails.Story)}}></div>
-
         <hr/>
-
         <button className="btn btn-success" onClick={this.toggleComments}>Comments</button>
-  
         { this.state.showComments ? <NewsCommentsComponent newsid={newsDetails.NewsItemId}/> : null }
-
         <hr/>
       </div>
     );

@@ -43,7 +43,8 @@ const NewsCommentsComponent = React.createClass({
           <img src={userImage} alt="user image" className="img-circle"/>
         </div>
         <div className="col-lg-11">
-          <h5>{newsComment.Fromname}</h5>
+          <span className="pull-right news-comment-date">{newsComment.DateLine}</span>
+          <h4>{newsComment.Fromname}</h4>
           {newsComment.Comment}
         </div>
         <br/>
@@ -56,7 +57,15 @@ const NewsCommentsComponent = React.createClass({
     return (
       <div>
         <hr/>
-        {newsCommentsDetails.map((newsComment) => this.renderComment(newsComment))}
+        {
+          newsCommentsDetails 
+          ?
+            newsCommentsDetails.map((newsComment) => this.renderComment(newsComment))
+          :
+            (
+              <div className="alert alert-danger"><b>Oh Snap!</b> No comments found.</div>
+            )
+        }
       </div>
     )
   },

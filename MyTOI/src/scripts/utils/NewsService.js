@@ -3,10 +3,10 @@ import NewsDetailsActions from '../actions/NewsDetailsActions';
 import $ from 'jquery';
 
 const NewsService = {
-  getBreakingNewsList () {
+  getBreakingNewsList (listCategory) {
     // TODO replace AJAX requests with superagent
     $.ajax({
-      url: 'http://localhost:3000/api/newsfeed/breakingnews',
+      url: 'http://localhost:3000/api/newsfeed/' + listCategory,
       success: function (latestNews) {
         BreakingNewsActions.retrieveNews(latestNews.NewsItem);
       },

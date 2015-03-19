@@ -3,6 +3,60 @@ article.context {
   margin-top : 35px;
 }
 
+.news-category-selector {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.news-category-container {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.news-item-loading-section {
+  background-image: url("../images/loading.gif");
+  width: 500px;
+  height: 270px;
+  margin: 0 auto;
+}
+
+.news-list-item-date {
+  font-size: 13px;
+  color: #CCCCCC;
+}
+
+.news-list-item-thumb {
+  height: 80px;
+  width: 80px;
+  vertical-align: middle;
+}
+
+.news-list-item-default-thumb {
+  height: 80px;
+  width: 80px;
+  vertical-align: middle;
+  border: 1px solid #CCCCCC;
+}
+
+.news-list-item-heading a {
+  border-bottom: 3px solid #b4e7f8;
+  box-shadow: inset 0 -5px 0 #b4e7f8;
+  color: inherit;
+  -webkit-transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+  transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+  text-decoration: none !important;
+
+}
+
+.news-details-body a {
+  border-bottom: 3px solid #b4e7f8;
+  box-shadow: inset 0 -5px 0 #b4e7f8;
+  color: inherit;
+  -webkit-transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+  transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+  text-decoration: none;
+}
+
 .news-details-body {
   font-family : "Proxima Nova";
   text-align  : justify;
@@ -22,9 +76,14 @@ article.context {
 }
 
 .news-comment-box {
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px dotted #DCDCDC;
   margin-bottom: 10px;
   padding-bottom: 10px;
+}
+
+.news-comment-date {
+  font-size: 13px;
+  color: #CCCCCC;
 }
 
 .thumbnail.with-caption {

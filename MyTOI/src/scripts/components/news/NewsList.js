@@ -1,8 +1,9 @@
 import React from 'react'
 import NewsItem from './NewsItem'
+import LoadingComponent from '../templates/LoadingComponent'
 
-import BreakingNewsStore from '../../stores/BreakingNewsStore';
-import NewsService from '../../utils/NewsService';
+import BreakingNewsStore from '../../stores/BreakingNewsStore'
+import NewsService from '../../utils/NewsService'
 
 function getStateFromStores() {
   return {
@@ -11,7 +12,7 @@ function getStateFromStores() {
 }
 
 // Initially fetching all the breaking news
-NewsService.getBreakingNewsList();
+NewsService.getBreakingNewsList("breakingnews");
 
 const NewsList = React.createClass({
 
@@ -23,22 +24,40 @@ const NewsList = React.createClass({
     BreakingNewsStore.addChangeListener(this._onChange);
   },
 
-  fetchBreakingNews () {
-    NewsService.getBreakingNewsList();
+  fetchNewsList () {
+    this.setState({news: []});
+    var requestedNewsCategory = this.refs.newsCategory.getDOMNode().value;
+    window.location.href = window.location.origin + '/#/' + requestedNewsCategory;
+    NewsService.getBreakingNewsList(requestedNewsCategory);
   },
 
   render () {
     return (
       <div>
-        <button className="btn btn-success pull-right" onClick={this.fetchBreakingNews}>Fetch News</button>
-        <br/><br/><hr/>
-        {this.state.news.map((newsItem) => (<NewsItem newsItem={newsItem}/>))}
+        <div className="news-category-container">
+          <select ref="newsCategory" className="form-control news-category-selector" onChange={this.fetchNewsList} defaultValue={this.props.newsCategory}>
+            <option value="breakingnews">Top News</option>
+            <option value="city">City</option>
+            <option value="india">India</option>
+            <option value="world">World</option>
+            <option value="business">Business</option>
+            <option value="tech">Technology</option>
+            <option value="sports">Sports</option>
+            <option value="education">Education</option>
+            <option value="environment">Environment</option>
+            <option value="science">Science</option>
+          </select>
+        </div>
+        <hr/>
+        {this.state.news.length === 0 ? <LoadingComponent /> : this.state.news.map((newsItem) => (<NewsItem newsItem={newsItem} newsCategory={this.props.newsCategory}/>))}
       </div>
     );
   },
 
   _onChange () {
-    this.setState(getStateFromStores());
+    if (this.isMounted()) {
+      this.setState(getStateFromStores());
+    }
   }
 })
 
