@@ -39,7 +39,9 @@ const NewsComponent = React.createClass({
 
   getFormattedStory (story) {
     // Prepend break before read also
-    story = story.replace(/(<strong>READ ALSO)/g, '<br/><br/>$1')
+    story = story.replace(/(<strong>READ ALSO)/g, '<br/><br/>$1');
+    story = story.replace(/<a href="(.*?)(\d+).cms"/g, '<a href="'+ location.href.replace(/\d+$/, '') +'$2"');
+    story = story.replace(/<a href/g, '<a target="_blank" href');
     return story;
   },
 
@@ -67,6 +69,24 @@ const NewsComponent = React.createClass({
     );
   },
 
+  newsVideoList (newsDetails) {
+    var newsVideos = newsDetails.Video || [];
+
+    return (
+      <div>
+        <h4>Videos:</h4>
+        <ul>
+          {newsVideos.map((newsVideo, index) => { 
+            return (
+              <li><a href={newsVideo.DetailFeed} target="_blank">{newsVideo.VideoCaption}</a></li>
+            ) 
+          })}
+        </ul>
+      </div>
+    );
+
+  },
+
   render () {
     var newsDetails = this.state.newsDetails;
 
@@ -77,6 +97,8 @@ const NewsComponent = React.createClass({
         <NewsPhotoComponent photoData={newsDetails.Image}/>
         {this.newsQuote(newsDetails.Caption)}
         <div className="news-details-body" dangerouslySetInnerHTML={{__html: this.getFormattedStory(newsDetails.Story)}}></div>
+        <hr/>
+        { this.newsVideoList(newsDetails) }
         <hr/>
         <button className="btn btn-success" onClick={this.toggleComments}>Comments</button>
         { this.state.showComments ? <NewsCommentsComponent newsid={newsDetails.NewsItemId}/> : null }
