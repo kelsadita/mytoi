@@ -70,7 +70,13 @@ const NewsComponent = React.createClass({
   },
 
   newsVideoList (newsDetails) {
+    
     var newsVideos = newsDetails.Video || [];
+    
+    if (!Array.isArray(newsVideos)) {
+      newsVideos = [newsVideos];
+    }
+
 
     return (
       <div>
