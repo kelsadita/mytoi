@@ -76,15 +76,16 @@ const NewsComponent = React.createClass({
     if (!Array.isArray(newsVideos)) {
       newsVideos = [newsVideos];
     }
-
-
+    
     return (
       <div>
         <h4>Videos:</h4>
         <ul>
           {newsVideos.map((newsVideo, index) => { 
+            var videoDetailField = newsVideo.DetailFeed;
+            var videoLink = videoDetailField.replace(/(.*?)(\d+)(.*)/, 'http://localhost:3000/api/videos/$2');
             return (
-              <li><a href={newsVideo.DetailFeed} target="_blank">{newsVideo.VideoCaption}</a></li>
+              <li><a href={videoLink} target="_blank">{newsVideo.VideoCaption}</a></li>
             ) 
           })}
         </ul>

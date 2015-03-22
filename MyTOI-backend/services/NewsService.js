@@ -73,6 +73,25 @@ var NewsService = {
       }
     }
     request(options, delegateResponseCallback);  
+  },
+
+  fetchVideoStream: function (req, res, next) {
+    var videoId = req.params.videoid;
+    var options = {
+      url     :  'http://timesofindia.indiatimes.com/feeds/videofeedshow/' + videoId + '.cms?feedtype=sjson',
+      headers :  this.apiAuthHeaders
+    };
+    function delegateResponseCallback(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var videoEntity = JSON.parse(response.body);
+        var videoUrl = videoEntity.VideoItem.PlayUrl;
+        res.redirect(videoUrl); 
+      } else {
+        res.send(error);
+      }
+    }
+    request(options, delegateResponseCallback);  
+
   }
 };
 
