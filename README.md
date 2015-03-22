@@ -25,6 +25,21 @@ Visit following url when both servers are up.
 http://localhost:8080/
 ```
 
+# How to use
+1. create an alias in **.bashrc** or **.zshrc** as follows (Mac environment)
+```
+alias news=<path to deployment.sh containing in the root of this project>
+```
+2. Source the updated rc file e.g,
+```
+$ source ~/.zshrc
+```
+3. Execute news command
+```
+$ news
+```
+4. Enjoy reading news with clean UI :)
+
 # Build proposal
 1. Build front-end code by `cd` into `MyTOI` and execute this command `webpack -p`. This will generate production ready code in the `build` folder at the root of the project.
 2. Rename `index.html` containing in this build folder to `index.hbs`.

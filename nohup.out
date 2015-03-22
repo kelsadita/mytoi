@@ -153,3 +153,14 @@ Port 3000 is already in use
 [0mGET /javascripts/bundle.js [36m304 [0m0.675 ms - -[0m
 [0mGET /api/news/46640214 [32m200 [0m120.594 ms - 5207[0m
 [0mGET /api/newsfeed/breakingnews [32m200 [0m989.006 ms - 90888[0m
+[0mGET / [36m304 [0m37.775 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m5.293 ms - -[0m
+[0mGET /javascripts/bundle.js [32m200 [0m6.545 ms - 1141003[0m
+[0mGET /bb80e3793b7cfd16a4603c518d6ef168.gif [33m404 [0m7.164 ms - 1632[0m
+[0mGET /api/newsfeed/breakingnews [36m304 [0m841.168 ms - -[0m
+[0mGET /api/news/46652200 [32m200 [0m545.941 ms - 1479[0m
+[0mGET /api/news/46652200/comments [32m200 [0m364.416 ms - 48[0m
+[0mGET /api/news/46651824 [32m200 [0m665.746 ms - 3085[0m
+[0mGET /api/news/46651559 [32m200 [0m622.841 ms - 5522[0m
+[0mGET /api/newsfeed/world [32m200 [0m1903.452 ms - 75732[0m
+[0mGET /api/newsfeed/breakingnews [36m304 [0m5406.457 ms - -[0m
