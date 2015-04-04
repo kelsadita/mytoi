@@ -4,6 +4,8 @@
 
 # Development instructions
 
+Make sure you have latest version of node js installed on your machine.
+
 The build process is still in rudimentary stage. For development you will need to start both `webpack` server (From MyTOI project) and `express` server (From MyTOI-backend project)
 
 Make sure that you *cd* into both the projects and run `npm install`
@@ -15,6 +17,9 @@ $ npm run dev
 ```
 
 **To start express server**
+
+Install nodemon (http://nodemon.io/)
+
 ```
 $ cd MyTOI-backend
 $ nodemon ./bin/www
