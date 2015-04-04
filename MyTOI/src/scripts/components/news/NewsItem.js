@@ -15,11 +15,11 @@ const NewsItem = React.createClass({
         <div>
           <div className="col-lg-1">
             {
-              newsData.Image ? <img src={newsData.Image.Photo} className="news-list-item-thumb"/> : <div className="news-list-item-default-thumb"></div>
+              newsData.Image ? <img src={newsData.Image.Photo} className="news-list-item-thumb img-thumbnail"/> : <div className="news-list-item-default-thumb"></div>
             }
           </div>
           <div className="col-lg-11">
-            <h4 className="news-list-item-heading"><Link href={newsItemComponentLink}>{newsData.HeadLine}</Link></h4>
+            <h3 className="news-list-item-heading"><Link href={newsItemComponentLink}>{newsData.HeadLine}</Link></h3>
             <div className="news-list-item-date">{newsData.DateLine}</div>
             <div>{newsData.Caption}</div>
             <hr/>
