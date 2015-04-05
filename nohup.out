@@ -486,3 +486,9 @@ Port 3000 is already in use
 [0mGET /api/news/46814024 [32m200 [0m634.105 ms - 3879[0m
 [0mGET /api/news/46814024/comments [32m200 [0m8117.349 ms - 17310[0m
 [0mGET /api/news/46815074 [32m200 [0m4270.361 ms - 5471[0m
+[0mGET /api/news/46814526 [36m304 [0m1116.364 ms - -[0m
+[0mGET /api/news/46814526 [36m304 [0m483.720 ms - -[0m
+[0mGET /api/news/46815074 [32m200 [0m1078.964 ms - 5472[0m
+[0mGET /api/news/46812534 [32m200 [0m660.618 ms - 3833[0m
+[0mGET /api/news/46814526 [36m304 [0m48.961 ms - -[0m
+[0mGET /api/news/46814526/comments [32m200 [0m769.901 ms - 21497[0m
