@@ -7,6 +7,26 @@
 ### News Details UI
 ![new details ui](https://github.com/kelsadita/mytoi/blob/master/screenshots/News-details.png)
 
+# Features
+- Recent news listing based on various categories
+1. Top News
+2. City
+3. India
+4. World
+5. Business
+6. Technology
+7. Sports
+8. Education
+9. Environment
+10. Science
+
+- News Details with following components,
+1. Summary
+2. Detail news
+3. Related news
+4. Videos (if any)
+5. Comments (if any)
+
 # How to use
 - create an alias in **.bashrc** or **.zshrc** as follows (Mac environment)
 ```
@@ -54,3 +74,7 @@ Visit following url when both servers are up.
 ```
 http://localhost:8080/
 ```
+
+# TODOS
+- Improvements in the comment box UI
+- Pagination on comment box and news
