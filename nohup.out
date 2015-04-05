@@ -474,3 +474,15 @@ Port 3000 is already in use
 [0mGET /api/news/46802432 [36m304 [0m4530.793 ms - -[0m
 [0mGET /api/news/46801069 [32m200 [0m3207.495 ms - 4916[0m
 [0mGET /api/news/46800231 [32m200 [0m825.235 ms - 3332[0m
+[0mGET / [32m200 [0m51.161 ms - 915[0m
+[0mGET /stylesheets/style.css [36m304 [0m6.247 ms - -[0m
+[0mGET /javascripts/bundle.js [32m200 [0m6.205 ms - 1141114[0m
+[0mGET /favicon.ico [33m404 [0m7.173 ms - 1632[0m
+[0mGET /apple-touch-icon-precomposed.png [33m404 [0m8.843 ms - 1632[0m
+[0mGET /bb80e3793b7cfd16a4603c518d6ef168.gif [33m404 [0m2.713 ms - 1632[0m
+[0mGET /apple-touch-icon.png [33m404 [0m4.953 ms - 1632[0m
+[0mGET /api/newsfeed/breakingnews [32m200 [0m1200.149 ms - 107153[0m
+[0mGET /api/news/46814526 [32m200 [0m1256.098 ms - 4987[0m
+[0mGET /api/news/46814024 [32m200 [0m634.105 ms - 3879[0m
+[0mGET /api/news/46814024/comments [32m200 [0m8117.349 ms - 17310[0m
+[0mGET /api/news/46815074 [32m200 [0m4270.361 ms - 5471[0m
