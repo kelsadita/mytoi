@@ -1,3 +1,12 @@
+# Screenshots
+
+### News List UI
+![new list ui](https://github.com/kelsadita/mytoi/blob/master/screenshots/News-list.png)
+
+
+### News Details UI
+![new details ui](https://github.com/kelsadita/mytoi/blob/master/screenshots/News-details.png)
+
 # How to use
 - create an alias in **.bashrc** or **.zshrc** as follows (Mac environment)
 ```
