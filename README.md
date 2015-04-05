@@ -8,7 +8,8 @@
 ![new details ui](https://github.com/kelsadita/mytoi/blob/master/screenshots/News-details.png)
 
 # Features
-- Recent news listing based on various categories
+
+###Recent news listing based on various categories
 1. Top News
 2. City
 3. India
@@ -20,7 +21,7 @@
 9. Environment
 10. Science
 
-- News Details with following components,
+###News Details with following components,
 1. Summary
 2. Detail news
 3. Related news
